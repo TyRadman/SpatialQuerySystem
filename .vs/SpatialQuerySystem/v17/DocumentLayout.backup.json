@@ -1,0 +1,534 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|c:\\users\\timde\\documents\\github\\pmf_premdmfight\\.git\\spatialquerysystem\\assets\\spatialquerysystem\\editor\\spatialqueryasseteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\spatialquerysystem\\editor\\spatialqueryasseteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|c:\\users\\timde\\documents\\github\\pmf_premdmfight\\.git\\spatialquerysystem\\assets\\spatialquerysystem\\evaluators\\editor\\spatialqueryevaluatoreditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\editor\\spatialqueryevaluatoreditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|c:\\users\\timde\\documents\\github\\pmf_premdmfight\\.git\\spatialquerysystem\\assets\\spatialquerysystem\\evaluators\\editor\\spatialquerydistanceevaluatoreditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6EDED6-8FB1-B040-8027-A6962EE3D69F}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\editor\\spatialquerydistanceevaluatoreditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialevaluationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialevaluationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialqueryasset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialqueryasset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialquerysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialquerysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\generatorsettings\\circlegridgeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\generatorsettings\\circlegridgeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\spatialquerycirclegridgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\spatialquerycirclegridgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\gridgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\gridgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\generatorsettings\\gridgeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\generatorsettings\\gridgeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\ringgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\ringgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\evaluators\\spatialqueryevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\spatialqueryevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\spatialqueryconegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\spatialqueryconegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\generatorsettings\\conegeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\generatorsettings\\conegeneratorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\debug\\spatialquerydebugpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\debug\\spatialquerydebugpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\evaluators\\visibilityevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\visibilityevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|c:\\users\\timde\\documents\\github\\pmf_premdmfight\\.git\\spatialquerysystem\\assets\\spatialquerysystem\\evaluators\\distanceevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\distanceevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\subjects\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\subjects\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\evaluators\\overlapevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\overlapevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialsamplingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialsamplingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialquerysamplepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialquerysamplepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\spatialqueryeditorassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\spatialqueryeditorassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\subjects\\spatialqueryevaluatorsubjectbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\subjects\\spatialqueryevaluatorsubjectbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\subjects\\customevaluatorsubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\subjects\\customevaluatorsubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\spatialquerygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\spatialquerygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\generatorsettingscontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\generatorsettingscontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\generators\\generatorsettings\\generatorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\generators\\generatorsettings\\generatorsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\evaluators\\pathlengthevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\pathlengthevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\evaluators\\angleevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\evaluators\\angleevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\enums\\spatialquerysubjecttarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\enums\\spatialquerysubjecttarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\assets\\spatialquerysystem\\enums\\scoringmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9169D545-3AEE-DEE7-ECC3-7AFF34FA6E9B}|Assembly-CSharp.csproj|solutionrelative:assets\\spatialquerysystem\\enums\\scoringmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpatialQuerySystem.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQuerySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialQuerySystem.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQuerySystem.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialQuerySystem.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwE4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:42:20.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SpatialQueryEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\SpatialQueryEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\SpatialQueryEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\SpatialQueryEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\SpatialQueryEvaluator.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAvwDIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:40:02.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RingGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\RingGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\RingGenerator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\RingGenerator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\RingGenerator.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwC8AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:09.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VisibilityEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\VisibilityEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\VisibilityEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\VisibilityEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\VisibilityEvaluator.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:30.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SpatialQueryDebugPoint.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Debug\\SpatialQueryDebugPoint.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Debug\\SpatialQueryDebugPoint.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Debug\\SpatialQueryDebugPoint.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Debug\\SpatialQueryDebugPoint.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:42:51.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SpatialQueryConeGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryConeGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryConeGenerator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryConeGenerator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryConeGenerator.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwD4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:20.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ConeGeneratorSettings.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\ConeGeneratorSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\ConeGeneratorSettings.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\ConeGeneratorSettings.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\ConeGeneratorSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:39.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GridGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GridGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GridGenerator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GridGenerator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GridGenerator.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwB0AAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:05.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GridGeneratorSettings.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GridGeneratorSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GridGeneratorSettings.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GridGeneratorSettings.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GridGeneratorSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:51.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpatialQueryCircleGridGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryCircleGridGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryCircleGridGenerator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryCircleGridGenerator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryCircleGridGenerator.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:16.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CircleGridGeneratorSettings.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\CircleGridGeneratorSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\CircleGridGeneratorSettings.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\CircleGridGeneratorSettings.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\CircleGridGeneratorSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:35.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpatialQueryAsset.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQueryAsset.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialQueryAsset.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQueryAsset.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialQueryAsset.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowGUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:41:15.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpatialEvaluationContext.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialEvaluationContext.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialEvaluationContext.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialEvaluationContext.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialEvaluationContext.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA4wDoAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:41:06.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpatialQueryDistanceEvaluatorEditor.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryDistanceEvaluatorEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryDistanceEvaluatorEditor.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryDistanceEvaluatorEditor.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryDistanceEvaluatorEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T22:01:52.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpatialQueryEvaluatorEditor.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryEvaluatorEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryEvaluatorEditor.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryEvaluatorEditor.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\Editor\\SpatialQueryEvaluatorEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T22:02:07.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpatialQueryAssetEditor.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Editor\\SpatialQueryAssetEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Editor\\SpatialQueryAssetEditor.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Editor\\SpatialQueryAssetEditor.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Editor\\SpatialQueryAssetEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T22:02:18.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DistanceEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\DistanceEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\DistanceEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\DistanceEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\DistanceEvaluator.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAvwCkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:15.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SpatialQueryEvaluatorSubjectBase.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\SpatialQueryEvaluatorSubjectBase.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Subjects\\SpatialQueryEvaluatorSubjectBase.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\SpatialQueryEvaluatorSubjectBase.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Subjects\\SpatialQueryEvaluatorSubjectBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:30.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OverlapEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\OverlapEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\OverlapEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\OverlapEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\OverlapEvaluator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:21.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SpatialSamplingContext.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialSamplingContext.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialSamplingContext.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialSamplingContext.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialSamplingContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:42:41.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SpatialQuerySamplePoint.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQuerySamplePoint.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialQuerySamplePoint.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQuerySamplePoint.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialQuerySamplePoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:42:12.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SpatialQueryEditorAssets.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQueryEditorAssets.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\SpatialQueryEditorAssets.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\SpatialQueryEditorAssets.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\SpatialQueryEditorAssets.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:42:07.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Test1.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\Test1.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Subjects\\Test1.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\Test1.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Subjects\\Test1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:38.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CustomEvaluatorSubject.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\CustomEvaluatorSubject.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Subjects\\CustomEvaluatorSubject.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Subjects\\CustomEvaluatorSubject.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Subjects\\CustomEvaluatorSubject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:31.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SpatialQueryGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryGenerator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\SpatialQueryGenerator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\SpatialQueryGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:44:26.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GeneratorSettingsContainer.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettingsContainer.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettingsContainer.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettingsContainer.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettingsContainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:56.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "GeneratorSettings.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GeneratorSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GeneratorSettings.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GeneratorSettings.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Generators\\GeneratorSettings\\GeneratorSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:44.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PathLengthEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\PathLengthEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\PathLengthEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\PathLengthEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\PathLengthEvaluator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:24.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AngleEvaluator.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\AngleEvaluator.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Evaluators\\AngleEvaluator.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Evaluators\\AngleEvaluator.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Evaluators\\AngleEvaluator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:10.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SpatialQuerySubjectTarget.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Enums\\SpatialQuerySubjectTarget.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Enums\\SpatialQuerySubjectTarget.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Enums\\SpatialQuerySubjectTarget.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Enums\\SpatialQuerySubjectTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:04.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ScoringMode.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Enums\\ScoringMode.cs",
+              "RelativeDocumentMoniker": "Assets\\SpatialQuerySystem\\Enums\\ScoringMode.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PMF_PreMdmFight\\.git\\SpatialQuerySystem\\Assets\\SpatialQuerySystem\\Enums\\ScoringMode.cs",
+              "RelativeToolTip": "Assets\\SpatialQuerySystem\\Enums\\ScoringMode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:43:00.108Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4173220394801079356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c34d50bfc20154db7aeb00036a7224, type: 3}
+  m_Name: OverlapEvaluator
+  m_EditorClassIdentifier: 
+  FilteringScore: {x: 0, y: 0.70370364}
+  Note: Write your note here
+  _overlapLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _sphereRadius: 1
+  _positionOffset: {x: 0, y: 0, z: 0}
+  OverlapIsHighScore: 0
+--- !u!114 &-1811679457717906256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abdc289046922e44aeb3d7abf41a5e1, type: 3}
+  m_Name: DistanceEvaluator
+  m_EditorClassIdentifier: 
+  FilteringScore: {x: 0.40070987, y: 1}
+  Note: 
+  SubjectType: 0
+  CustomSubjectTypeName: TankLike.Test1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  CloserIsHighEvaluation: 0
+  MinDistance: 10
+  MaxDistance: 25
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb0471aad866d943b105a874f4feca0, type: 3}
+  m_Name: SQA_Test
+  m_EditorClassIdentifier: 
+  DebugPoints: 0
+  GetHighestScore: 1
+  SuccessScoreRange: {x: 0.28846484, y: 1}
+  SelectedIndex: 3
+  _selectedGenerator:
+    rid: 318129756016476230
+  GridSettings:
+    CoverageSize: 5
+    Spacing: 0.5
+    OffsetY: 0.5
+  RingSettings:
+    InnerRadius: 10
+    OuterRadius: 25
+    RingCount: 6
+    PointsPerRing: 32
+    OffsetY: 0.5
+  CircleSettings:
+    OuterRadius: 5
+    InnerRadius: 2
+    Spacing: 0.5
+    OffsetY: 0.5
+  ConeSettings:
+    InnerRadius: 10
+    OuterRadius: 15
+    RingCount: 5
+    PointsPerRing: 16
+    Angle: 90
+    OffsetY: 0.5
+  _evaluators:
+  - {fileID: -4173220394801079356}
+  - {fileID: 6829501380191260167}
+  - {fileID: -1811679457717906256}
+  - {fileID: 7820693747774038312}
+  references:
+    version: 2
+    RefIds:
+    - rid: 318129756016476230
+      type: {class: ConeGeneratorSettings, ns: SpatialQuery, asm: Assembly-CSharp}
+      data:
+        InnerRadius: 10
+        OuterRadius: 15
+        RingCount: 5
+        PointsPerRing: 16
+        Angle: 90
+        OffsetY: 0.5
+--- !u!114 &6829501380191260167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abdc289046922e44aeb3d7abf41a5e1, type: 3}
+  m_Name: DistanceEvaluator
+  m_EditorClassIdentifier: 
+  FilteringScore: {x: 0, y: 0.6018518}
+  Note: Distance from the player to sample points. This ensures that points that
+    are further away from the player score higher so that the enemy doesn't come
+    too close to players.
+  SubjectType: 1
+  CustomSubjectTypeName: 
+  CloserIsHighEvaluation: 0
+  MinDistance: 10
+  MaxDistance: 15
+--- !u!114 &7820693747774038312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1532bef3eebd8df41b18fd04cd38e5a7, type: 3}
+  m_Name: VisibilityEvaluator
+  m_EditorClassIdentifier: 
+  FilteringScore: {x: 0.5, y: 1}
+  Note: Write your note here
+  BlockerLayer:
+    serializedVersion: 2
+    m_Bits: 6400
+  VisibilityDistance: 15
+  _visibilityRadius: 1
+  VisibilityIsHighScore: 1
+  OffsetY: 0.5
