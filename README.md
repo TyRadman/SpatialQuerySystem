@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/5a877474-21f0-422a-981f-fa7a7fc0c45f
 # Spatial Query System for Unity
 
 <p>
@@ -15,6 +17,12 @@ A flexible and extensible spatial query framework for Unity. Designed for AI and
 - Debug mode and sample point visualizers.
 - Automatic editor integration for all custom class (like evaluators, generators, and subjects).
 - 5 evaluators and 4 generators.
+
+
+<br>
+<br>
+
+---
 
 ## Usage
 1. Create a `SpatialQueryAsset` asset through the menu.
@@ -57,11 +65,33 @@ private void SomeMovementMethod()
 
 NOTE: you might need to pass a reference to the target if the evaluator subject type is set to `Target`. More on that next.
 
+### Demo
+
+In this clip, the enemy chooses optimal positions based on these criteria:
+
+- Maximizing distance from the player.
+
+- Prioritizing locations far from its original starting position.
+
+- Maintaining a clear line of sight to shoot the player.
+
+- Avoiding positions too close to walls and obstacles.
+
+
+
+
+<br>
+<br>
+
+---
+
 ## Evaluators
 
 Evaluators define the rules used to score or filter sampled points. Each one inherits from `SpatialQueryEvaluator` and implements custom logic for determining relevance based on a `query context` and `subject`.
 
 Evaluators support three scoring modes (`Score`, `Filter`, `FilterAndScore`) and can be extended with minimal boilerplate.
+
+<br>
 
 ### Base Methods & Properties
 
@@ -76,12 +106,16 @@ Evaluators support three scoring modes (`Score`, `Filter`, `FilterAndScore`) and
 | `AddToScore(point, value)` | `void` | Adds weighted score to a point and handles filtering logic. This is the only way to register the evaluation score. |
 | `GetSubjectPosition(...)` | `Vector2` | Returns the position of the evaluated subject (`Querier`, `Target`, or `Custom`). |
 
+<br>
+
 ### Editor Methods and Properties
 
 | Member | Type | Description |
 |--------|------|-------------|
 | `GetEvaluatorSummary()` | `virtual string` | Returns a string summary for display in the inspector. |
 | `GetIconPath()` | `virtual string` | Returns a custom icon path for UI (optional). |
+
+<br>
 
 ### Customization
 
@@ -115,11 +149,19 @@ namespace SpatialQuery
 }
 ```
 
+
+<br>
+<br>
+
+---
+
 ## Generators
 
 Generators define how spatial sample points are created in the world. Each generator inherits from `SpatialQueryGenerator` and implements a strategy for producing positions to be evaluated.
 
 Generators can use the `NavMesh` to ensure points are reachable and valid for AI navigation.
+
+<br>
 
 ### Base Methods & Properties
 
@@ -129,6 +171,8 @@ Generators can use the `NavMesh` to ensure points are reachable and valid for AI
 | `_querier` | `Transform` | The entity requesting the spatial query; set automatically when `GenerateSamplePoints` is called. |
 | `_target` | `Transform` | The query's target (if applicable); also set via context. |
 | `IsPointValid(source, point)` | `protected bool` | Returns `true` if a valid NavMesh path exists from `source` to `point`. |
+
+<br>
 
 ### Customization
 
@@ -158,11 +202,19 @@ namespace SpatialQuery
 
 Use IsPointValid() and GetPathLength() for NavMesh validation and path-based logic when necessary.
 
+
+<br>
+<br>
+
+---
+
 ## Custom Evaluator Subjects
 
 Custom subjects allow evaluators to reference entities other than the querier or target — useful for cases like group coordination, custom targets or dynamically chosen references.
 
 All custom subjects inherit from `SpatialQueryEvaluatorSubjectBase`.
+
+<br>
 
 ### Base Methods & Properties
 
@@ -171,6 +223,8 @@ All custom subjects inherit from `SpatialQueryEvaluatorSubjectBase`.
 | `SetUp(owner)` | `virtual` | Assigns the owner GameObject. Called automatically before evaluation begins. |
 | `GetEvaluatorSubject()` | `abstract Transform` | Must return a `Transform` representing the subject to be evaluated. |
 | `_owner` | `GameObject` | Internally stored reference to the owner GameObject. |
+
+<br>
 
 ### Customization
 
@@ -192,9 +246,64 @@ namespace SpatialQuery
     }
 }
 ```
+
+<br>
+<br>
+
+---
+
+## Scoring
+For now, the system only allows for two scoring modes which can be set in the `SpatialQueryAsset`:
+
+| Scoring Mode | Description |
+|-|-|
+| `HighestScore` | Returns the first point that gets the highest score after evaluation. |
+| `WithinScoreRange` | Returns a random point that has a score value within a given score range. |
+
+
+
+
+<br>
+<br>
+
+---
+
+## Debugging
+The tool provides control over the debugging process in both play and edit mode.
+
+<br>
+
+### Edit Mode Debugging
+
+To conveniently test the way evaluators score the space of a level before the AI entities takes control over it, a `QueryDebugger` has to be added to the scene as well as a target if an evaluator in the evaluators set needs a target. <br>
+A Query debugger can be found in the project files through `SpatialQuery -> Debug -> PF_Debugger`. Drag the prefab gameObject to the scene and then assign:
+1. `Asset`: A Spatial Query Asset from the project files.
+2. `Target`: A transform reference of an object in the scene. Make sure the target has a collider and the correct layer if the evaluators need it.
+
+![image](https://github.com/user-attachments/assets/8e74468b-ddb5-4fbd-9519-2a12e0c1fb28)
+
+<br>
+
+### Debug Settings
+
+The `SpatialQueryAsset` asset has debug configurations that can be modified by checking `Debug sample points`:
+
+![image](https://github.com/user-attachments/assets/546ff19d-0944-4d62-8423-2ec6f33e853d)
+
+| Property | Description |
+|--------|-------------|
+| `DebugDuration` | How long should the debug points be displayed (not applicable for edit mode debuggers). |
+| `DisplayScore` | Whether to display the score of each point after evaluation. |
+| `UseCustomGradientForScores` | Whether to use a custom gradient color for the points based on their score. |
+| `CustomGradient` | Is editable if `UseCustomGradientForScores` is checked. |
+
+<br>
+<br>
+
+---
+
 ## Future improvements
 
 - **Asynchronous Evaluation Support** – Offload heavy queries to background threads.
-- **In-Edit Query Testing Tool** – Visual tool for simulating queries and previewing results.
 - **Runtime Configuration** – Load and adjust query settings dynamically through code or UI.
 - **Sample Points Caching** - Cache sampled points to avoid repeating evaluations in the future.
