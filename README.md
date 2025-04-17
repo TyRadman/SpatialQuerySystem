@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/5a877474-21f0-422a-981f-fa7a7fc0c45f
 # Spatial Query System for Unity
 
 <p>
@@ -52,6 +50,7 @@ private void Awake()
 {
   _spatialQueryAsset.Initiate(transform);
 }
+
 ```
 
 8. Call `GetPointPosition()` to get the position of the point that match rules of the evaluators provided.
@@ -78,7 +77,7 @@ In this clip, the enemy chooses optimal positions based on these criteria:
 - Avoiding positions too close to walls and obstacles.
 
 
-
+https://github.com/user-attachments/assets/cb9fff92-5027-4b47-9991-69ca2f1e334c
 
 <br>
 <br>
@@ -271,6 +270,8 @@ For now, the system only allows for two scoring modes which can be set in the `S
 ## Debugging
 The tool provides control over the debugging process in both play and edit mode.
 
+https://github.com/user-attachments/assets/e38cff46-833d-4ee5-abf4-f9226a872e0c
+
 <br>
 
 ### Edit Mode Debugging
@@ -281,6 +282,14 @@ A Query debugger can be found in the project files through `SpatialQuery -> Debu
 2. `Target`: A transform reference of an object in the scene. Make sure the target has a collider and the correct layer if the evaluators need it.
 
 ![image](https://github.com/user-attachments/assets/8e74468b-ddb5-4fbd-9519-2a12e0c1fb28)
+
+<br>
+
+### Sampling Point Report
+
+To better debug, the system generates a simple report for each sampling point, providing the score for every evaluation the sample point went through, as well as the range of scores within the context of that evaluation cycle and where the selected sample point falls within it. The report can be viewed by simply clicking on the sample point in the hierarchy.
+
+![image](https://github.com/user-attachments/assets/36f66614-540e-4aa9-80de-345be5513caf)
 
 <br>
 
