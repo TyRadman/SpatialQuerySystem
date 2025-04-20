@@ -10,9 +10,9 @@ namespace SpatialQuery
         public Transform Target { get; private set; }
 
         private Vector3 _samplingCenter;
-        private List<GeneratorSettings> _generators = new List<GeneratorSettings>();
+        private List<SpatialQueryGenerator> _generators = new List<SpatialQueryGenerator>();
 
-        public SpatialSamplingContext(params GeneratorSettings[] generatorSettings)
+        public SpatialSamplingContext(params SpatialQueryGenerator[] generatorSettings)
         {
             for (int i = 0; i < generatorSettings.Length; i++)
             {
@@ -20,7 +20,7 @@ namespace SpatialQuery
             }
         }
 
-        public List<GeneratorSettings> GetGenerators()
+        public List<SpatialQueryGenerator> GetGenerators()
         {
             return _generators;
         }

@@ -13,9 +13,7 @@ namespace SpatialQuery
     {
         private Dictionary<Type, Texture2D> _iconCache = new();
         private Dictionary<Object, Editor> _cachedEditors = new();
-        private List<FieldInfo> _settingsFields = new();
         private List<Type> settingTypes;
-        private string[] _fieldNames;
         private string[] typeNames;
         private Type baseType = typeof(SpatialQueryEvaluator);
         private Texture2D _arrowDownIcon;
@@ -27,7 +25,7 @@ namespace SpatialQuery
 
         private void OnEnable()
         {
-            CacheGenerators();
+            CacheGeneratorTypes();
 
             CacheEvaluatorTypes();
 
@@ -35,26 +33,18 @@ namespace SpatialQuery
             _arrowDownIcon = SpatialQueryEditorAssets.LoadIcon("T_Arrow_Down.png");
         }
 
-        private void CacheGenerators()
+        private List<Type> generatorTypes;
+        private string[] generatorTypeNames;
+        private Type generatorBaseType = typeof(SpatialQueryGenerator);
+
+        private void CacheGeneratorTypes()
         {
-            _settingsFields.Clear();
+            generatorTypes = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(a => a.GetTypes())
+                .Where(t => generatorBaseType.IsAssignableFrom(t) && !t.IsAbstract && !t.IsGenericType)
+                .ToList();
 
-            var containerType = typeof(SpatialQueryAsset);
-
-            foreach (FieldInfo field in containerType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance))
-            {
-                if (field.FieldType.IsAbstract)
-                {
-                    continue;
-                }
-
-                if (typeof(GeneratorSettings).IsAssignableFrom(field.FieldType))
-                {
-                    _settingsFields.Add(field);
-                }
-            }
-
-            _fieldNames = _settingsFields.ConvertAll(f => ObjectNames.NicifyVariableName(f.Name)).ToArray();
+            generatorTypeNames = generatorTypes.Select(t => ObjectNames.NicifyVariableName(t.Name)).ToArray();
         }
 
         private void CacheEvaluatorTypes()
@@ -76,6 +66,33 @@ namespace SpatialQuery
             so.Update();
 
             container.DebugPoints = EditorGUILayout.Toggle("Debug sample points", container.DebugPoints);
+            
+            if(container.DebugPoints)
+            {
+                EditorGUI.indentLevel++;
+                container.DebugDuration = EditorGUILayout.FloatField("Debug Duration", container.DebugDuration);
+                container.ScoreDisplayMode = (ScoreDisplayMode)EditorGUILayout.EnumPopup("Score Display Mode", container.ScoreDisplayMode);
+
+                if(container.ScoreDisplayMode is ScoreDisplayMode.ShowScoreAsSize or ScoreDisplayMode.ShowScoreTextAndSize)
+                {
+                    EditorGUI.indentLevel++;
+                    container.DebugScalingRange = EditorGUILayout.Vector2Field("Scaling Range", container.DebugScalingRange);
+                    EditorGUI.indentLevel--;
+                }
+
+                container.UseCustomGradientScoreColoring = EditorGUILayout.Toggle("Use Custom Gradient for scores", container.UseCustomGradientScoreColoring);
+
+                if(container.UseCustomGradientScoreColoring)
+                {
+                    EditorGUI.indentLevel++;
+                    container.CustomGradient = EditorGUILayout.GradientField("Custom Gradient", container.CustomGradient);
+                    EditorGUI.indentLevel--;
+                }
+
+                EditorGUI.indentLevel--;
+            }
+
+            GUILayout.Space(10f);
             container.GetHighestScore = EditorGUILayout.Toggle("Select highest score", container.GetHighestScore);
 
             if (!container.GetHighestScore)
@@ -98,35 +115,84 @@ namespace SpatialQuery
 
             GUILayout.Space(10f);
 
-
-            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
-
-            // generator dropdown
-            container.SelectedIndex = EditorGUILayout.Popup("Generator Type", container.SelectedIndex, _fieldNames);
-
-            if (container.SelectedIndex >= 0 && container.SelectedIndex < _settingsFields.Count)
-            {
-                var selectedField = _settingsFields[container.SelectedIndex];
-                var selectedSettings = (GeneratorSettings)selectedField.GetValue(container);
-                container.SetSelectedGenerator(selectedSettings);
-
-                SerializedProperty selectedProp = so.FindProperty("_selectedGenerator");
-
-                if (selectedProp != null)
-                {
-                    EditorGUI.indentLevel++;
-                    EditorGUILayout.PropertyField(selectedProp, true);
-                    EditorGUI.indentLevel--;
-                }
-            }
-
-            EditorGUILayout.EndVertical();
-
-            EditorGUILayout.Space(10);
+            RenderGeneratorsSection(container);
 
             // evaluator type dropdown and the add button
             EditorGUI.indentLevel++;
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            RenderEvaluatorAddRemoveSection(container);
+            RenderEvaluators(container);
+            EditorGUILayout.EndVertical();
+            EditorGUI.indentLevel--;
+
+            so.ApplyModifiedProperties();
+
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(container);
+            }
+        }
+
+        private void RenderGeneratorsSection(SpatialQueryAsset container)
+        {
+            EditorGUI.indentLevel++;
+            GUILayout.Space(10f);
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            GUIStyle bigLabel = new GUIStyle(EditorStyles.boldLabel);
+            bigLabel.fontSize = 16;
+            EditorGUILayout.LabelField("Generator", bigLabel);
+
+            int selected = container.SelectedIndex;
+            selected = EditorGUILayout.Popup("Generator Type", selected, generatorTypeNames);
+
+            if (selected != container.SelectedIndex)
+            {
+                // Delete old one
+                if (container.GetSelectedGenerator() != null)
+                {
+                    Object.DestroyImmediate(container.GetSelectedGenerator(), true);
+                }
+
+                var newType = generatorTypes[selected];
+                var newGenerator = ScriptableObject.CreateInstance(newType) as SpatialQueryGenerator;
+
+                string path = AssetDatabase.GetAssetPath(container);
+                if (!string.IsNullOrEmpty(path))
+                {
+                    newGenerator.name = newType.Name;
+                    AssetDatabase.AddObjectToAsset(newGenerator, path);
+                    AssetDatabase.ImportAsset(path);
+                    AssetDatabase.SaveAssets();
+
+                    container.SetSelectedGenerator(newGenerator);
+                    container.SelectedIndex = selected;
+
+                    EditorUtility.SetDirty(container);
+                }
+            }
+
+            var selectedGen = container.GetSelectedGenerator();
+            if (selectedGen != null)
+            {
+                if (!_cachedEditors.TryGetValue(selectedGen, out var editor))
+                {
+                    editor = CreateEditor(selectedGen);
+                    _cachedEditors[selectedGen] = editor;
+                }
+
+                EditorGUILayout.Space(5);
+                EditorGUILayout.LabelField(ObjectNames.NicifyVariableName(selectedGen.GetType().Name), EditorStyles.boldLabel);
+                editor.OnInspectorGUI();
+            }
+
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.Space(10);
+            EditorGUI.indentLevel--;
+        }
+
+        private void RenderEvaluatorAddRemoveSection(SpatialQueryAsset container)
+        {
+            GUILayout.Space(10f);
             GUIStyle bigLabel = new GUIStyle(EditorStyles.boldLabel);
             bigLabel.fontSize = 16;
             EditorGUILayout.LabelField("Evaluators", bigLabel);
@@ -144,8 +210,11 @@ namespace SpatialQuery
                 if (!string.IsNullOrEmpty(path))
                 {
                     newEvaluator.name = newType.Name;
+                    // set the range of the evaluator based on the current generator
+                    newEvaluator.SetRange(container.GetSelectedGenerator().GetAreaCoverageRange());
+
                     AssetDatabase.AddObjectToAsset(newEvaluator, path);
-                    AssetDatabase.ImportAsset(path);
+                    //AssetDatabase.ImportAsset(path);
                     AssetDatabase.SaveAssets();
 
                     container.AddEvaluator(newEvaluator);
@@ -160,18 +229,6 @@ namespace SpatialQuery
             EditorGUILayout.EndHorizontal();
 
             GUILayout.Space(10f);
-
-            RenderEvaluators(container);
-
-            EditorGUILayout.EndVertical();
-            EditorGUI.indentLevel--;
-
-            so.ApplyModifiedProperties();
-
-            if (GUI.changed)
-            {
-                EditorUtility.SetDirty(container);
-            }
         }
 
         private void RenderEvaluators(SpatialQueryAsset container)
@@ -260,8 +317,6 @@ namespace SpatialQuery
                 {
                     fontSize = 16
                 };
-
-                //GUILayout.Label(ObjectNames.NicifyVariableName(evaluator.GetType().Name), nameStyle, GUILayout.ExpandWidth(true));
 
                 GUILayout.BeginVertical();
 

@@ -6,17 +6,24 @@ namespace SpatialQuery
 {
     public class SpatialQueryConeGenerator : SpatialQueryGenerator
     {
-        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(GeneratorSettings generatorSettings, SpatialSamplingContext context)
-        {
-            base.GenerateSamplePoints(generatorSettings, context);
+        [Header("Size")]
+        public float InnerRadius = 5f;
+        public float OuterRadius = 20f;
 
-            if (!ValidateSettings<ConeGeneratorSettings>(generatorSettings, out var settings))
-            {
-                return null;
-            }
+        [Header("Sample points")]
+        public int RingCount = 7;
+        public int PointsPerRing = 24;
+
+        [Header("Others")]
+        public float Angle = 180f;
+        public float OffsetY = 1.1f;
+
+        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(SpatialSamplingContext context)
+        {
+            base.GenerateSamplePoints(context);
 
             Vector3 center = context.GetSamplingCenter();
-            center.y = settings.OffsetY;
+            center.y = OffsetY;
 
             List<SpatialQuerySamplePoint> points = new List<SpatialQuerySamplePoint>();
 
@@ -26,16 +33,16 @@ namespace SpatialQuery
 
             float forwardAngle = Mathf.Atan2(forward.x, forward.z) * Mathf.Rad2Deg;
 
-            float halfAngle = settings.Angle * 0.5f;
+            float halfAngle = Angle * 0.5f;
             float startAngle = forwardAngle - halfAngle;
             float endAngle = forwardAngle + halfAngle;
 
-            float radiusStep = (settings.OuterRadius - settings.InnerRadius) / Mathf.Max(1, settings.RingCount - 1);
+            float radiusStep = (OuterRadius - InnerRadius) / Mathf.Max(1, RingCount - 1);
 
-            for (int layer = 0; layer < settings.RingCount; layer++)
+            for (int layer = 0; layer < RingCount; layer++)
             {
-                float currentRadius = settings.InnerRadius + radiusStep * layer;
-                CreateLayerPoints(currentRadius, settings.PointsPerRing, center, startAngle, endAngle, points);
+                float currentRadius = InnerRadius + radiusStep * layer;
+                CreateLayerPoints(currentRadius, PointsPerRing, center, startAngle, endAngle, points);
             }
 
             return points;
@@ -60,7 +67,7 @@ namespace SpatialQuery
                     continue;
                 }
 
-                SpatialQuerySamplePoint point = SpatialQuerySystem.GetInstance().RequestSamplePoint();
+                SpatialQuerySamplePoint point = RequestPoint();
                 point.PointPosition = position;
                 points.Add(point);
             }
@@ -69,6 +76,11 @@ namespace SpatialQuery
         private Vector3 CalculatePosition(Vector3 center, float radius, float angle)
         {
             return center + Quaternion.Euler(0, angle, 0) * Vector3.forward * radius;
+        }
+
+        public override Vector2 GetAreaCoverageRange()
+        {
+            return new Vector2(InnerRadius, OuterRadius);
         }
     }
 }

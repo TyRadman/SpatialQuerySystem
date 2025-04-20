@@ -67,5 +67,10 @@ namespace SpatialQuery
 
             return summary.ToString();
         }
+
+        public override void SetRange(Vector2 range)
+        {
+            // do nothing
+        }
     }
 }

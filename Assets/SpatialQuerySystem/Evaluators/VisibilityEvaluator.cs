@@ -9,7 +9,7 @@ namespace SpatialQuery
         public float VisibilityDistance;
         [SerializeField, Min(0f)] private float _visibilityRadius = 0f;
         public bool VisibilityIsHighScore = true;
-        public float OffsetY = 0.5f;
+        public float OffsetY = 1.1f;
 
         public override string GetIconPath()
         {
@@ -70,6 +70,11 @@ namespace SpatialQuery
             summary.Append($"\n");
 
             return summary.ToString();
+        }
+
+        public override void SetRange(Vector2 range)
+        {
+            VisibilityDistance = range.y;
         }
     }
 }

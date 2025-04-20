@@ -4,11 +4,32 @@ using UnityEngine.AI;
 
 namespace SpatialQuery
 {
-    public abstract class SpatialQueryGenerator
+    public abstract class SpatialQueryGenerator : ScriptableObject
     {
         protected Transform _querier;
         protected Transform _target;
-        public virtual List<SpatialQuerySamplePoint> GenerateSamplePoints(GeneratorSettings generatorSettings, SpatialSamplingContext context)
+        protected bool _isDebugMode = false;
+        protected QueryDebugger _debugger;
+
+        public void EnableDebugMode(QueryDebugger debugger)
+        {
+            _isDebugMode = true;
+            _debugger = debugger;
+        }
+
+        protected SpatialQuerySamplePoint RequestPoint()
+        {
+            if (_isDebugMode)
+            {
+                return _debugger.RequestSamplePoint();
+            }
+            else
+            {
+                return SpatialQuerySystem.GetInstance().RequestSamplePoint();
+            }
+        }
+
+        public virtual List<SpatialQuerySamplePoint> GenerateSamplePoints(SpatialSamplingContext context)
         {
             _querier = context.Querier;
             _target = context.Target;
@@ -20,43 +41,9 @@ namespace SpatialQuery
         {
             NavMeshPath path = new NavMeshPath();
             NavMesh.CalculatePath(sourcePoint, point, NavMesh.AllAreas, path);
-            return path.status != NavMeshPathStatus.PathInvalid;
+            return path.status == NavMeshPathStatus.PathComplete;
         }
 
-        protected float GetPathLength(Vector3 startPoint, Vector3 destination, ref NavMeshPathStatus pathStatus)
-        {
-            NavMeshPath path = new NavMeshPath();
-            NavMesh.CalculatePath(startPoint, destination, NavMesh.AllAreas, path);
-
-            float length = 0f;
-
-            if (path.corners.Length < 2)
-            {
-                return length;
-            }
-
-            for (int i = 1; i < path.corners.Length; i++)
-            {
-                length += Vector3.Distance(path.corners[i - 1], path.corners[i]);
-            }
-
-            pathStatus = path.status;
-
-            return length;
-        }
-
-        protected bool ValidateSettings<T>(GeneratorSettings settings, out T validated) where T : GeneratorSettings
-        {
-            validated = null;
-
-            if (settings == null || !(settings is T))
-            {
-                Debug.LogError("Invalid generator settings");
-                return false;
-            }
-
-            validated = (T)settings;
-            return true;
-        }
+        public abstract Vector2 GetAreaCoverageRange();
     }
 }

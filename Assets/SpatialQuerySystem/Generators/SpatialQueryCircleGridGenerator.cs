@@ -6,19 +6,23 @@ namespace SpatialQuery
 {
     public class SpatialQueryCircleGridGenerator : SpatialQueryGenerator
     {
-        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(GeneratorSettings generatorSettings, SpatialSamplingContext context)
+        [Header("Size")]
+        public float InnerRadius = 5f;
+        public float OuterRadius = 20f;
+
+        [Header("Sample points")]
+        public float Spacing = 2f;
+
+        [Header("Others")]
+        public float OffsetY = 1.1f;
+
+        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(SpatialSamplingContext context)
         {
-            base.GenerateSamplePoints(generatorSettings, context);
+            base.GenerateSamplePoints(context);
 
-            if (generatorSettings == null || generatorSettings is not CircleGridGeneratorSettings settings)
-            {
-                Debug.LogError("Generator settings are either null or the wrong type");
-                return null;
-            }
-
-            float outerRadius = settings.OuterRadius;
-            float innerRadius = settings.InnerRadius;
-            float spacing = settings.Spacing;
+            float outerRadius = OuterRadius;
+            float innerRadius = InnerRadius;
+            float spacing = Spacing;
             Vector2 centerPoint = new Vector2(context.GetSamplingCenter().x, context.GetSamplingCenter().z);
 
             int pointsPerSide = Mathf.Max(1, Mathf.FloorToInt((outerRadius * 2f) / spacing) + 1);
@@ -37,14 +41,14 @@ namespace SpatialQuery
 
                     if (squaredDistance > innerRadius * innerRadius && squaredDistance < outerRadius * outerRadius)
                     {
-                        Vector3 position = new Vector3(point.x, settings.OffsetY, point.y);
+                        Vector3 position = new Vector3(point.x, OffsetY, point.y);
 
                         if (!IsPointValid(_querier.position, position))
                         {
                             continue;
                         }
 
-                        SpatialQuerySamplePoint samplePoint = SpatialQuerySystem.GetInstance().RequestSamplePoint();
+                        SpatialQuerySamplePoint samplePoint = RequestPoint();
                         samplePoint.PointPosition = position;
                         points.Add(samplePoint);
                     }
@@ -52,6 +56,11 @@ namespace SpatialQuery
             }
 
             return points;
+        }
+
+        public override Vector2 GetAreaCoverageRange()
+        {
+            return new Vector2(InnerRadius, OuterRadius);
         }
     }
 }

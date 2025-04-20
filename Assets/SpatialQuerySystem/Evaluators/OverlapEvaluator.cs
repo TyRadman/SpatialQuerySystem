@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
@@ -35,6 +33,11 @@ namespace SpatialQuery
             summary.Append($"\n");
 
             return summary.ToString();
+        }
+
+        public override void SetRange(Vector2 range)
+        {
+            // do nothing
         }
     }
 }

@@ -54,8 +54,6 @@ namespace SpatialQuery
                 evaluator.SetScoreWeight(EditorGUILayout.FloatField("Score Weight", evaluator.ScoreWeight));
             }
 
-            EditorGUILayout.Space(10f);
-
             DrawPropertiesExcluding(serializedObject,
                 nameof(SpatialQueryEvaluator.ScoringMode),
                 nameof(SpatialQueryEvaluator.FilteringScore),
@@ -63,6 +61,8 @@ namespace SpatialQuery
 
             EditorGUI.indentLevel--;
             serializedObject.ApplyModifiedProperties();
+
+            EditorGUILayout.Space(10f);
         }
 
     }

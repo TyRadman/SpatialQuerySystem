@@ -6,26 +6,30 @@ namespace SpatialQuery
 {
     public class RingGenerator : SpatialQueryGenerator
     {
-        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(GeneratorSettings generatorSettings, SpatialSamplingContext context)
-        {
-            base.GenerateSamplePoints(generatorSettings, context);
+        [Header("Size")]
+        public float InnerRadius = 5f;
+        public float OuterRadius = 20f;
+        [Header("Sample points")]
+        public int RingCount = 8;
+        public int PointsPerRing = 24;
+        [Header("Others")]
+        public float OffsetY = 1.1f;
 
-            if (!ValidateSettings<RingGeneratorSettings>(generatorSettings, out var settings))
-            {
-                return null;
-            }
+        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(SpatialSamplingContext context)
+        {
+            base.GenerateSamplePoints(context);
             
             Vector3 center = context.GetSamplingCenter();
-            center.y = settings.OffsetY;
+            center.y = OffsetY;
 
             List<SpatialQuerySamplePoint> points = new List<SpatialQuerySamplePoint>();
 
-            float radialStep = (settings.OuterRadius - settings.InnerRadius) /Mathf.Max(1, settings.RingCount - 1);
+            float radialStep = (OuterRadius - InnerRadius) /Mathf.Max(1, RingCount - 1);
 
-            for (int ring = 0; ring < settings.RingCount; ring++)
+            for (int ring = 0; ring < RingCount; ring++)
             {
-                float currentRadius = settings.InnerRadius + (radialStep * ring);
-                CreateRingPoints(currentRadius, settings.PointsPerRing, center, points);
+                float currentRadius = InnerRadius + (radialStep * ring);
+                CreateRingPoints(currentRadius, PointsPerRing, center, points);
             }
 
             return points;
@@ -45,7 +49,7 @@ namespace SpatialQuery
                     continue;
                 }
 
-                SpatialQuerySamplePoint point = SpatialQuerySystem.GetInstance().RequestSamplePoint();
+                SpatialQuerySamplePoint point = RequestPoint();
                 point.PointPosition = position;
                 points.Add(point);
             }
@@ -54,6 +58,11 @@ namespace SpatialQuery
         private Vector3 CalculateRingPosition(Vector3 center, float radius, float angle)
         {
             return center + Quaternion.Euler(0, angle, 0) * Vector3.forward * radius;
+        }
+
+        public override Vector2 GetAreaCoverageRange()
+        {
+            return new Vector2(InnerRadius, OuterRadius);
         }
     }
 }

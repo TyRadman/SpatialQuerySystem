@@ -31,5 +31,19 @@ namespace SpatialQuery
             string fullPath = Path.Combine(PluginRootPath, fileName);
             return AssetDatabase.LoadAssetAtPath<Texture2D>(fullPath);
         }
+
+        public static SpatialQueryDebugPoint LoadDebugSamplePointPrefab()
+        {
+            string[] guids = AssetDatabase.FindAssets("PF_SpatialQueryDebugPoint t:Prefab");
+
+            if (guids.Length > 0)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
+                GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                return prefab.GetComponent<SpatialQueryDebugPoint>();
+            }
+
+            return null;
+        }
     }
 }

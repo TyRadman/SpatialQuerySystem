@@ -23,7 +23,10 @@ namespace SpatialQuery
 
         private void InitSubjectTypes()
         {
-            if (_initialized) return;
+            if (_initialized)
+            {
+                return;
+            }
 
             _subjectTypes = new Dictionary<string, System.Type>();
             _subjectTypeNames = new List<string>();
@@ -54,7 +57,6 @@ namespace SpatialQuery
         public override void OnInspectorGUI()
         {
             DistanceEvaluator evaluator = (DistanceEvaluator)target;
-
 
             serializedObject.Update();
 
@@ -89,6 +91,8 @@ namespace SpatialQuery
             EditorGUI.indentLevel--;
 
             serializedObject.ApplyModifiedProperties();
+
+            EditorGUILayout.Space(10f);
         }
     }
 }

@@ -64,6 +64,8 @@ namespace SpatialQuery
 
         protected void AddToScore(SpatialQuerySamplePoint data, float scoreToAdd)
         {
+            RegisterReport(data, scoreToAdd);
+
             if(ScoringMode != ScoringMode.Score)
             {
                 if (scoreToAdd >= FilteringScore.x && scoreToAdd <= FilteringScore.y)
@@ -78,6 +80,32 @@ namespace SpatialQuery
             }
 
             data.Score += scoreToAdd * ScoreWeight;
+        }
+
+        private void RegisterReport(SpatialQuerySamplePoint data, float scoreToAdd)
+        {
+            const int colWidth = 40;
+            const int numColumnWidth = 10;
+
+            if (data.Report.Length == 0)
+            {
+                string header = $"<b>{"Evaluator",-colWidth}</b>" +
+                                $"<b>{"Score",numColumnWidth}</b>" +
+                                $"<b>{"Weight",numColumnWidth}</b>" +
+                                $"<b>{"Total",numColumnWidth}</b>";
+                data.Report.AppendLine(header);
+            }
+
+            string name = GetType().Name;
+            string paddedName = name.PadRight(colWidth);
+
+            data.Report.AppendLine(
+                $"{paddedName}" +
+                $"{scoreToAdd,numColumnWidth:0.0}" +
+                $"{ScoreWeight,numColumnWidth:0.0}" +
+                $"{(scoreToAdd * ScoreWeight),numColumnWidth:0.0}"
+            );
+
         }
 
         public void SetScoringMode(ScoringMode mode)
@@ -139,5 +167,7 @@ namespace SpatialQuery
 
             return summary.ToString();
         }
+
+        public abstract void SetRange(Vector2 range);
     }
 }

@@ -39,6 +39,45 @@ namespace SpatialQuery
             return _settings;
         }
 
+        public Vector3 GetPointWithinScoreRange_Debug(float minScore, float maxScore, bool getHighestScore)
+        {
+            _samplePoints.RemoveAll(p => p == null);
+
+            if(getHighestScore && HighestScoreIndex == -1)
+            {
+                Debug.LogError("No highest score");
+                return Vector3.zero;
+            }
+         
+            if (_samplePoints == null || _samplePoints.Count == 0)
+            {
+                Debug.LogError("No sample points");
+                return Vector3.zero;
+            }
+
+            SpatialQuerySamplePoint selectedPoint;
+
+            if (getHighestScore)
+            {
+                selectedPoint = _samplePoints[HighestScoreIndex];
+            }
+            else
+            {
+                var qualifiedPoints = _samplePoints.FindAll(p => p.Score >= minScore && p.Score <= maxScore && !p.IsFilteredOut);
+                selectedPoint = qualifiedPoints[Random.Range(0, qualifiedPoints.Count)];
+            }
+
+            if (selectedPoint == null)
+            {
+                Debug.LogError($"No selected point {_samplePoints.FindAll(p => p == null).Count} out of {_samplePoints.Count}. Highest score: {_samplePoints.OrderBy(p => p.Score).First().Score}");
+
+                return Vector3.zero;
+            }
+
+            selectedPoint.IsWinner = true;
+            return selectedPoint.PointPosition;
+        }
+
         public Vector3 GetPointWithinScoreRange(float minScore, float maxScore, bool getHighestScore)
         {
             if(_samplePoints == null || _samplePoints.Count == 0)
@@ -110,8 +149,15 @@ namespace SpatialQuery
                     continue;
                 }
 
+                FinalizeReport(_samplePoints[i], min, max);
                 _samplePoints[i].Score = Mathf.InverseLerp(min, max, _samplePoints[i].Score);
             }
+        }
+
+        private void FinalizeReport(SpatialQuerySamplePoint point, float min, float max)
+        {
+            float finalScore = Mathf.InverseLerp(min, max, point.Score);
+            point.Report.Append($"\n\n<b>Raw score</b>: {point.Score:0.00}\n<b>Min</b>: {min:0.00}, <b>Max</b>: {max:0.00}\n<b>Final score</b>: {finalScore:0.00}");
         }
 
         public void ReleaseSamplePoints()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace SpatialQuery
@@ -13,6 +14,7 @@ namespace SpatialQuery
         public bool IsAvailable = true;
 
         public bool IsWinner = false;
+        public StringBuilder Report = new StringBuilder();
 
         internal void ResetPoint()
         {

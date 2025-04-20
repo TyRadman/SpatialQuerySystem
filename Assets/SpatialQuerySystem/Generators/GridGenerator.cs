@@ -5,21 +5,25 @@ namespace SpatialQuery
 {
     public class GridGenerator : SpatialQueryGenerator
     {
-        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(GeneratorSettings generatorSettings, SpatialSamplingContext context)
+        [Header("Size")]
+        public float CoverageSize = 20f;
+
+        [Header("Sample points")]
+        public float Spacing = 2f;
+
+        [Header("Others")]
+        public float OffsetY = 1.1f;
+
+        public override List<SpatialQuerySamplePoint> GenerateSamplePoints(SpatialSamplingContext context)
         {
-            base.GenerateSamplePoints(generatorSettings, context);
+            base.GenerateSamplePoints(context);
 
-            if (generatorSettings == null || generatorSettings is not GridGeneratorSettings settings)
-            {
-                Debug.LogError("Generator settings are either null or the wrong type");
-                return null;
-            }
-
-            float size = settings.CoverageSize;
-            float spacing = settings.Spacing;
+            float size = CoverageSize;
+            float spacing = Spacing;
             int pointsPerSide = Mathf.Max(1, Mathf.FloorToInt(size / spacing) + 1);
             float totalGridSize = (pointsPerSide - 1) * spacing;
-            Vector3 startPoint = context.GetSamplingCenter() - new Vector3(totalGridSize / 2f, 0f, totalGridSize / 2f);
+            Vector2 centerPoint = new Vector2(context.GetSamplingCenter().x, context.GetSamplingCenter().z);
+            Vector2 startPoint = centerPoint - new Vector2(totalGridSize / 2f, totalGridSize / 2f);
 
             List<SpatialQuerySamplePoint> points = new List<SpatialQuerySamplePoint>();
 
@@ -27,20 +31,26 @@ namespace SpatialQuery
             {
                 for (int j = 0; j < pointsPerSide; j++)
                 {
-                    Vector3 position = startPoint + new Vector3(i * spacing, settings.OffsetY, j * spacing);
+                    Vector2 point = startPoint + new Vector2(i * spacing, j * spacing);
+                    Vector3 position = new Vector3(point.x, OffsetY, point.y);
 
                     if(!IsPointValid(_querier.position, position))
                     {
                         continue;
                     }
 
-                    SpatialQuerySamplePoint samplePoint = SpatialQuerySystem.GetInstance().RequestSamplePoint();
+                    SpatialQuerySamplePoint samplePoint = RequestPoint();
                     samplePoint.PointPosition = position;
                     points.Add(samplePoint);
                 }
             }
 
             return points;
+        }
+
+        public override Vector2 GetAreaCoverageRange()
+        {
+            return new Vector2(0f, CoverageSize);
         }
     }
 }

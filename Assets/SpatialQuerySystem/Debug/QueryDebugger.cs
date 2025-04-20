@@ -1,45 +1,68 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SpatialQuery
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    /// <summary>
-    /// Provides functionality for generating spatial sample points based on customizable parameters.
-    /// </summary>
-    public class SpatialQuerySystem : MonoBehaviour
+    [SelectionBase]
+    public class QueryDebugger : MonoBehaviour
     {
+        public SpatialQueryAsset Asset;
+
+        [SerializeField] private Transform _target;
+
+        [Header("Defaults")]
         [SerializeField] private SpatialQueryDebugPoint _debugPointPrefab;
+        [SerializeField] private Transform _pointsParent;
+
+        [HideInInspector] public bool UpdateMode = false;
 
         private List<SpatialQueryDebugPoint> _debugPoints = new List<SpatialQueryDebugPoint>();
         private List<SpatialQuerySamplePoint> _samplePoints = new List<SpatialQuerySamplePoint>();
 
-        private static SpatialQuerySystem _instance;
-        private static SpatialQuerySystem _debugInstance;
+        [HideInInspector] public bool IsInitiated = false;
 
-        private void Awake()
-        {
-            _instance = this;
-        }
+        private SpatialQueryGenerator _currentGenerator;
 
-        public static SpatialQuerySystem GetInstance()
+        public void Init()
         {
-            if (_instance == null)
+            if(Asset == null)
             {
-                GameObject system = new GameObject("SpatialQuerySystem_Object");
-                _instance = system.AddComponent<SpatialQuerySystem>();
+                return;
             }
 
-            return _instance;
+            Asset.Initiate_Debug(this);
+            _currentGenerator = Asset.GetSelectedGenerator();
+        }
+
+        public void DebugSamplePoints()
+        {
+            if (Asset == null)
+            {
+                return;
+            }
+
+            if(!IsInitiated || _currentGenerator != Asset.GetSelectedGenerator())
+            {
+                Init();
+                IsInitiated = true;
+            }
+
+            Asset.UpdateTarget(_target);
+            Asset.GetPointPosition_Debug(this);
         }
 
         public void GenerateDebugPoints(List<SpatialQuerySamplePoint> points, DebugPointSettings commonSettings)
         {
-            if(_debugPointPrefab == null)
+            if (_debugPointPrefab == null)
             {
                 _debugPointPrefab = SpatialQueryEditorAssets.LoadDebugSamplePointPrefab();
             }
+
+            _debugPoints.RemoveAll(p => p == null);
+            _debugPoints.ForEach(p => p.Hide_Debug());
 
             int count = _debugPoints.Count(d => !d.IsActive);
 
@@ -47,7 +70,7 @@ namespace SpatialQuery
             {
                 for (int i = 0; i < points.Count - count; i++)
                 {
-                    SpatialQueryDebugPoint debugPoint = Instantiate(_debugPointPrefab, Vector3.zero, Quaternion.identity);
+                    SpatialQueryDebugPoint debugPoint = Instantiate(_debugPointPrefab, Vector3.zero, Quaternion.identity, _pointsParent);
                     _debugPoints.Add(debugPoint);
                 }
             }
@@ -59,10 +82,11 @@ namespace SpatialQuery
                 DebugPointSettings settings = new DebugPointSettings()
                 {
                     Point = points[i],
-                    Duration = commonSettings.Duration,
                     ScoreDisplayMode = commonSettings.ScoreDisplayMode,
                     UseDefaultGradient = commonSettings.UseDefaultGradient,
                     ScoreColorGradient = commonSettings.ScoreColorGradient,
+                    Animate = false,
+                    HidePointsAfterShowing = false,
                     ScalingRange = commonSettings.ScalingRange
                 };
 
@@ -73,6 +97,8 @@ namespace SpatialQuery
 
         public SpatialQuerySamplePoint RequestSamplePoint()
         {
+            _samplePoints.RemoveAll(p => p == null);
+
             for (int i = 0; i < _samplePoints.Count; i++)
             {
                 if (_samplePoints[i].IsAvailable)
@@ -86,6 +112,16 @@ namespace SpatialQuery
             _samplePoints.Add(point);
             point.ResetPoint();
             return point;
+        }
+
+        public void ClearDebugPoints()
+        {
+            int count = _pointsParent.childCount;
+
+            for (int i = count - 1; i >= 0; i--)
+            {
+                DestroyImmediate(_pointsParent.GetChild(i).gameObject);
+            }
         }
     }
 }

@@ -1,25 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Radnom = UnityEngine.Random;
 
 namespace SpatialQuery
 {
     [CreateAssetMenu(fileName = "SQA_NAME", menuName = "Spatial Query System/ Spatial Query Asset")]
-    public class SpatialQueryAsset : ScriptableObject
+    public partial class SpatialQueryAsset : ScriptableObject
     {
         public bool DebugPoints = true;
+        public float DebugDuration = 3f;
+        public ScoreDisplayMode ScoreDisplayMode = ScoreDisplayMode.ShowScoreText;
+        public Vector2 DebugScalingRange = new Vector2(0.25f, 1.5f);
+        public bool UseCustomGradientScoreColoring = false;
+        public Gradient CustomGradient;
+
         public bool GetHighestScore = true;
         public Vector2 SuccessScoreRange = new(0.9f, 1.0f);
-
-        [HideInInspector] public SpatialQueryGenerator Generator;
         public int SelectedIndex = 0;
-        [SerializeReference]
-        public GeneratorSettings _selectedGenerator;
 
-        public GridGeneratorSettings GridSettings = new GridGeneratorSettings();
-        public RingGeneratorSettings RingSettings = new RingGeneratorSettings();
-        public CircleGridGeneratorSettings CircleSettings = new CircleGridGeneratorSettings();
-        public ConeGeneratorSettings ConeSettings = new ConeGeneratorSettings();
+        //[SerializeReference]
+        public SpatialQueryGenerator _selectedGenerator;
 
         [HideInInspector] public List<SpatialQueryEvaluator> _evaluators = new List<SpatialQueryEvaluator>();
 
@@ -31,7 +30,6 @@ namespace SpatialQuery
 
         public void Initiate(Transform querier)
         {
-
             if (querier == null)
             {
                 Debug.LogError("No querier passed");
@@ -62,7 +60,7 @@ namespace SpatialQuery
 
             _samplingContext.SetSamplingPoint(_querier.position);
 
-            system.RequestSpatialSampling(_samplingContext, _evaluationContext);
+            RequestSpatialSampling(_samplingContext, _evaluationContext);
 
             for (int i = 0; i < _evaluators.Count; i++)
             {
@@ -75,11 +73,50 @@ namespace SpatialQuery
 
             if (DebugPoints)
             {
-                system.GenerateDebugPoints(_evaluationContext.GetSampledPoints());
+                DebugPointSettings settings = new DebugPointSettings()
+                {
+                    Duration = DebugDuration,
+                    ScoreDisplayMode = ScoreDisplayMode,
+                    UseDefaultGradient = !UseCustomGradientScoreColoring,
+                    ScoreColorGradient = CustomGradient,
+                    ScalingRange = DebugScalingRange
+                };
+
+                system.GenerateDebugPoints(_evaluationContext.GetSampledPoints(), settings);
             }
 
             _evaluationContext.ReleaseSamplePoints();
             return point;
+        }
+
+        private void RequestSpatialSampling(SpatialSamplingContext context, params SpatialEvaluationContext[] evaluationContexts)
+        {
+            if (context == null)
+            {
+                Debug.LogError("No samplingContext passed");
+                return;
+            }
+
+            List<SpatialQueryGenerator> generators = context.GetGenerators();
+
+            if (generators == null || generators.Count == 0)
+            {
+                Debug.LogError("No generatorSettings passed");
+                return;
+            }
+
+            List<SpatialQuerySamplePoint> data = new List<SpatialQuerySamplePoint>();
+
+            for (int i = 0; i < generators.Count; ++i)
+            {
+                SpatialQueryGenerator generator = generators[i];
+                data = generator.GenerateSamplePoints(context);
+            }
+
+            for (int i = 0; i < evaluationContexts.Length; i++)
+            {
+                evaluationContexts[i].SetSamplePoints(data);
+            }
         }
 
         public void AddEvaluator(SpatialQueryEvaluator newEvaluator)
@@ -97,7 +134,7 @@ namespace SpatialQuery
             _evaluators.Remove(evaluatorToRemove);
         }
 
-        public void SetSelectedGenerator(GeneratorSettings generator)
+        public void SetSelectedGenerator(SpatialQueryGenerator generator)
         {
             _selectedGenerator = generator;
         }
@@ -123,6 +160,11 @@ namespace SpatialQuery
             _target = target;
             _evaluationContext.SetTarget(_target);
             _samplingContext.SetTarget(_target);
+        }
+
+        public SpatialQueryGenerator GetSelectedGenerator()
+        {
+            return _selectedGenerator;
         }
     }
 }
